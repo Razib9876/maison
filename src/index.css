@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Tailwind uses rem, so scaling the root font-size scales the whole UI from 300px up to 4000px+ */
+html { font-size: 14px; scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+@media (min-width: 360px)  { html { font-size: 15px; } }
+@media (min-width: 640px)  { html { font-size: 16px; } }
+@media (min-width: 1920px) { html { font-size: 20px; } }
+@media (min-width: 2560px) { html { font-size: 27px; } }
+@media (min-width: 3200px) { html { font-size: 34px; } }
+@media (min-width: 3840px) { html { font-size: 40px; } }
+
+body { @apply bg-sand text-ink font-sans antialiased overflow-x-hidden; }
+img { @apply max-w-full; }
+
+@layer components {
+  .wrap { @apply mx-auto w-full max-w-[80rem] px-4 sm:px-6 lg:px-10; }
+  .eyebrow { @apply text-[0.7rem] uppercase tracking-[0.3em] text-gold; }
+  .h-display { @apply font-serif font-medium uppercase leading-[1.08] tracking-wide; }
+  .btn { @apply inline-flex items-center justify-center gap-2 border border-ink px-6 py-3 text-xs uppercase tracking-[0.2em] transition hover:bg-ink hover:text-sand disabled:cursor-not-allowed disabled:opacity-40; }
+  .btn-solid { @apply inline-flex items-center justify-center gap-2 border border-ink bg-ink px-6 py-3 text-xs uppercase tracking-[0.2em] text-sand transition hover:border-gold hover:bg-gold disabled:cursor-not-allowed disabled:opacity-40; }
+  .input { @apply w-full border border-ink/20 bg-white px-4 py-3 text-sm outline-none transition placeholder:text-ink/40 focus:border-ink; }
+  .input-error { @apply border-red-500 focus:border-red-500; }
+  .label { @apply mb-1.5 block text-[0.7rem] uppercase tracking-[0.18em] text-ink/70; }
+  .err { @apply mt-1 text-xs text-red-600; }
+  .card { @apply border border-ink/10 bg-white; }
+}
